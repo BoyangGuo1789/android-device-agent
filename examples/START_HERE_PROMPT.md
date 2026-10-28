@@ -4,7 +4,7 @@
 
 ```text
 请帮我在这台电脑复刻 Android 设备的基础操作能力。
-仓库：https://github.com/BoyangGuo1789/mi-pad-agent
+仓库：https://github.com/BoyangGuo1789/android-device-agent
 
 1. 克隆为独立目录，先阅读 README.md、AGENTS.md、docs/SETUP.md。
 2. 检查系统、Python 3.10+、Git、ADB、scrcpy；依赖只从官方或系统包管理器获取。

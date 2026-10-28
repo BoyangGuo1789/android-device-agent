@@ -51,8 +51,8 @@ sudo apt install python3 git adb
 3. 小米等系统可能另有“USB 调试（安全设置）”控制输入。仅连接成功不代表输入权限完整；按系统提示由设备主人决定是否授权。
 
 ```bash
-git clone https://github.com/BoyangGuo1789/mi-pad-agent.git
-cd mi-pad-agent
+git clone https://github.com/BoyangGuo1789/android-device-agent.git
+cd android-device-agent
 python3 scripts/tablet_control.py devices
 bash scripts/bootstrap.sh
 ```

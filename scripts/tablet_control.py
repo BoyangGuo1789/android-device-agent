@@ -29,7 +29,7 @@ else:
 
 TOKEN_ENV = "MI_PAD_LOCK_TOKEN"
 OBSERVER_OPTIONS = ["--no-audio", "--no-power-on", "--no-clipboard-autosync",
-                    "--max-size=1280", "--always-on-top", "--window-title=Mi-pad Agent"]
+                    "--max-size=1280", "--always-on-top", "--window-title=Android Device Agent"]
 
 
 class LockError(Exception):

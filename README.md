@@ -1,8 +1,8 @@
-# Mi-pad Agent
+# Android Device Agent
 
-**把 Android 平板变成电脑上 AI Agent 的操作终端。**
+**把 Android 设备变成电脑上 AI Agent 的操作终端。**
 
-连接自己的手机或平板，即可让具有终端、文件和图片读取能力的 AI Agent 读取界面、点击、滑动、运行 App 和保存操作证据。你可以在投屏窗口随时点击协助。核心是 Python 标准库、ADB、scrcpy，以及一套实际执行的设备互斥锁与操作约定。
+适用于支持 ADB 调试的 Android 手机和平板。连接自己的设备，即可让具有终端、文件和图片读取能力的 AI Agent 读取界面、点击、滑动、运行 App 和保存操作证据。你可以在投屏窗口随时点击协助。核心是 Python 标准库、ADB、scrcpy，以及一套实际执行的设备互斥锁与操作约定。
 
 本仓库是可复刻的基础控制工具包，需配合使用者自己的 AI Agent。它不包含模型服务、API 额度、App 账号或云端控制后台。设备通过 USB 接到执行 Agent 的电脑；下载链接不会远程接管另一台电脑或本项目原设备。
 
@@ -10,7 +10,7 @@
 
 把下面这段话连同仓库链接交给对方电脑上的 AI Agent：
 
-> 请克隆 https://github.com/BoyangGuo1789/mi-pad-agent ，先阅读 README.md、AGENTS.md 和 docs/SETUP.md，检查我的电脑环境并安装缺失的官方依赖。我会连接自己的 Android 设备并完成 USB 调试授权。请生成本机配置，运行 doctor 和基础验收，确认截图、UI 读取、唤醒与设备锁可用，最后打开共享投屏。不要创建业务定时任务或操作购物、考勤、消息；先向我报告验收结果。
+> 请克隆 https://github.com/BoyangGuo1789/android-device-agent ，先阅读 README.md、AGENTS.md 和 docs/SETUP.md，检查我的电脑环境并安装缺失的官方依赖。我会连接自己的 Android 设备并完成 USB 调试授权。请生成本机配置，运行 doctor 和基础验收，确认截图、UI 读取、唤醒与设备锁可用，最后打开共享投屏。不要创建业务定时任务或操作购物、考勤、消息；先向我报告验收结果。
 
 完整交接提示词见 [START_HERE_PROMPT](examples/START_HERE_PROMPT.md)。
 
@@ -33,8 +33,8 @@
 ```bash
 brew install python git scrcpy
 brew install --cask android-platform-tools
-git clone https://github.com/BoyangGuo1789/mi-pad-agent.git
-cd mi-pad-agent
+git clone https://github.com/BoyangGuo1789/android-device-agent.git
+cd android-device-agent
 ```
 
 在自己的 Android 设备上打开开发者选项和 USB 调试，用数据线连接，在设备弹窗中授权这台电脑。然后运行：

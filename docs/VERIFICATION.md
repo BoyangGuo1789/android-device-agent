@@ -30,6 +30,6 @@
 
 此步骤成功不能证明其他电脑、所有 App 或 Windows 已实测通过。取得链接的使用者仍须在自己的设备上运行验收。
 
-GitHub Actions 矩阵为 macOS / Ubuntu、Python 3.10 / 3.14；最新执行结果见 [GitHub Actions](https://github.com/BoyangGuo1789/mi-pad-agent/actions)。本文件记录的 37 项通过指本机实际执行，其他矩阵以 Actions 结果为准。
+GitHub Actions 矩阵为 macOS / Ubuntu、Python 3.10 / 3.14；最新执行结果见 [GitHub Actions](https://github.com/BoyangGuo1789/android-device-agent/actions)。本文件记录的 37 项通过指本机实际执行，其他矩阵以 Actions 结果为准。
 
 首次 CI 在 macOS / Python 3.10 暴露了原续租测试使用 0.2 秒 TTL 的计时敏感性；发布版将该测试改为受控单调时钟，直接验证“超过原到期点但尚未到续租到期点仍互斥”，避免磁盘同步耗时影响结论。

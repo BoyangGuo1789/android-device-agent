@@ -1,4 +1,4 @@
-# Mi-pad Agent 操作约定
+# Android Device Agent 操作约定
 
 本文件约束使用本仓库控制 Android 设备的 AI Agent；先读 README 与 docs/SETUP.md。
 

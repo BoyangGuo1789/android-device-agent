@@ -1,1 +1,1 @@
-"""Mi-pad Agent host tools."""
+"""Android Device Agent host tools."""
