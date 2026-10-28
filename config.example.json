@@ -1,0 +1,5 @@
+{
+  "serial": "YOUR_DEVICE_SERIAL",
+  "adb": "adb",
+  "scrcpy": "scrcpy"
+}
