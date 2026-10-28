@@ -9,6 +9,7 @@ import tempfile
 import threading
 import time
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts.tablet_control import Controller as DeviceController, LockError
@@ -106,12 +107,14 @@ class LockTests(unittest.TestCase):
         self.c.adb(new, ["get-state"])
 
     def test_renew_keeps_session_exclusive(self):
-        token = self.acquire(ttl=0.2)
-        time.sleep(0.12)
-        self.c.renew(token)
-        time.sleep(0.12)
-        self.assert_error("LOCK_BUSY", self.c.acquire, "chat-b", "new")
-        self.c.release(token)
+        # Model time directly: fsync/scheduler latency must not consume a tiny TTL.
+        with patch('scripts.tablet_control.time.monotonic', return_value=100.0) as clock:
+            token = self.acquire(ttl=10)
+            clock.return_value = 106.0
+            self.c.renew(token)
+            clock.return_value = 112.0  # Original expiry was 110; renewal extends to 116.
+            self.assert_error("LOCK_BUSY", self.c.acquire, "chat-b", "new")
+            self.c.release(token)
 
     def test_running_command_cannot_be_stolen_or_released(self):
         token = self.acquire(ttl=0.25)

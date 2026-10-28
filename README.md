@@ -47,7 +47,7 @@ python3 scripts/tablet_control.py observe
 
 `bootstrap.sh` 只检查工具、选择设备并生成本机配置，不安装系统软件。验收会唤醒设备、返回桌面、采集截图及 UI XML，随后释放锁。成功时显示 `"ok": true` 和 `"lease_released": true`。投屏是前台进程，关闭窗口结束。
 
-**Linux / Windows：**原生运行支持 macOS 和 Linux；Windows 需使用 WSL2 + USB 转接，当前未做 Windows 真机验收。各系统完整步骤、缺依赖和离线排查见 [安装指南](docs/SETUP.md)。
+**Linux / Windows：** 原生运行支持 macOS 和 Linux；Windows 需使用 WSL2 + USB 转接，当前未做 Windows 真机验收。各系统完整步骤、缺依赖和离线排查见 [安装指南](docs/SETUP.md)。
 
 ## 怎么让 Agent 操作
 
