@@ -24,7 +24,8 @@ def config_path():
 
 
 def validate_serial(serial):
-    if not isinstance(serial, str) or not re.fullmatch(r"[A-Za-z0-9_.:-]+", serial):
+    if (not isinstance(serial, str) or not re.fullmatch(r"[A-Za-z0-9_.:-]+", serial)
+            or serial in {".", ".."} or serial.startswith("-")):
         raise ConfigError("设备 serial 不能为空、不能包含路径或空格；请重新 setup")
     return serial
 

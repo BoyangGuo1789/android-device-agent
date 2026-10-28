@@ -81,7 +81,7 @@ class ConfigTests(unittest.TestCase):
             self.configure()
 
     def test_invalid_serial_cannot_escape_state_directory(self):
-        for serial in ['', '../other', '/tmp/other', 'with space', '-s other', None]:
+        for serial in ['', '.', '..', '-s', '../other', '/tmp/other', 'with space', '-s other', None]:
             with self.assertRaises(ConfigError):
                 validate_serial(serial)
 
